@@ -1,0 +1,49 @@
+import codecs
+from random import randint
+import linecache
+
+#ДЛЯ ПОДРАССЫ ТОЛЬКО АНГЛИЙСКАЯ 'c'
+
+A = ['RACE']
+'''
+Раса  + sub
+Orid
+2. BACK 
+3. Статы  
+4. FEAT  
+5. CLASS
+ 5.1. Хп  
+ 5.2. SUB (подкласс)  
+'''
+while True:
+    
+    #Открытие файла
+    for s in range(0,1):
+        file = codecs.open(A[s]+'.txt',encoding='utf-8')
+    
+        #Cтроки
+        text = file.readlines()
+        st = len(text)
+        R = randint(0,st-1)
+        cho = text[R]
+        
+        #Вывод
+        print("********************" )
+
+        #Раса
+        if s == 0:
+            #Определение подрасы (АРБАЙТЕН)
+            if cho[0] == "c":
+                print("56"+cho[1:])
+                
+            
+            print(cho, end = '')
+            
+                
+        print("********************")
+
+    fin = input()
+    if fin == 1:
+        break
+    
+file.close()
